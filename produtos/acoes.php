@@ -44,7 +44,15 @@
 
         }
         //VALIDAÇÃO DE VALOR
+        if ($_POST["valor"] == "" || !isset($_POST["valor"])) {
 
+            $erros[] = "O CAMPO VALOR É OBRIGATORIO";
+
+        } elseif (!is_numeric(str_replace(",",".", $_POST["valor"]))) {
+
+            $erros[] = "CAMPO VALOR DEVE SER UM NUMERO";
+            
+        }
         //VALIDAÇÃO DE DESCONTO
 
         //VALIDAÇÃO DE CATEGORIA
