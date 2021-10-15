@@ -79,6 +79,35 @@
             $erros[] = "O CAMPO CATEGORIA É OBRIGATORIO";
 
         }
+
+        //VALIDAÇÃO DE IMAGEM
+        if ($_FILES["foto"]["error"] == UPLOAD_ERR_NO_FILE) {
+
+            $erros[] = "O ARQUIVO PRECISA SER UMA IMAGEM";
+
+        }else {
+            
+            $imagemInfos = getimagesize($_FILES["foto"]["tmp"]);
+
+            if ($_FILES["foto"]["size"] > 1024 * 1024 * 2) {
+               
+                $erros[] = "O ARQUIVO NÃO PODE SER MAIOR QUE 2MB";
+
+            }
+
+            $width = $imagemInfos[0];
+            $height = $imagemInfos[1];
+
+            if ($width != $height) {
+
+                $erros[] = "A IMAGEM PRECISA SER QUADRADA";
+
+            }
+
+        }
+        
+        return $erros;
+    
     }
 
     switch ($_POST["acao"]) {
