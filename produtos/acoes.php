@@ -38,7 +38,11 @@
             
         }
         //VALIDAÇÃO DE COR
-        
+        if ($_POST["cor"] == "" || !isset($_POST["cor"])) {
+
+            $erros[] = "O CAMPO COR É OBRIGATORIO";
+
+        }
         //VALIDAÇÃO DE VALOR
 
         //VALIDAÇÃO DE DESCONTO
