@@ -11,10 +11,19 @@
 
         //VALIDAÇÃO DE DESCRIÇÃO
         if ($_POST["decricao"] == "" || !isset($_POST["descricao"])) {
-            $erros[] = "O CAMPO É OBRIGATORIO";
+
+            $erros[] = "O CAMPO DESCRIÇÃO É OBRIGATORIO";
+
         }
 
         //VALIDAÇÃO DE PESO
+        if ($_POST["peso"] == "" || !isset($_POST["peso"])) {
+
+            $erros[] = "O CAMPO PESO É OBRIGATORIO";
+
+        } elseif (!is_numeric(str_replace(",",".", $_POST["peso"]))) {
+            $erros[] = "CAMPO PESO DEVE SER UM NUMERO";
+        }
 
         //VALIDAÇÃO DE QUANTIDADE
         
