@@ -54,7 +54,15 @@
             
         }
         //VALIDAÇÃO DE DESCONTO
+        if ($_POST["desconto"] == "" || !isset($_POST["desconto"])) {
 
+            $erros[] = "O CAMPO DESCONTO É OBRIGATORIO";
+
+        } elseif (!is_numeric(str_replace(",",".", $_POST["desconto"]))) {
+
+            $erros[] = "CAMPO DESCONTO DEVE SER UM NUMERO";
+            
+        }
         //VALIDAÇÃO DE CATEGORIA
 
     }
