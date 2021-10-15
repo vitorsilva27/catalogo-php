@@ -74,7 +74,11 @@
             
         }
         //VALIDAÇÃO DE CATEGORIA
+        if ($_POST["categoria"] == "" || !isset($_POST["categoria"])) {
 
+            $erros[] = "O CAMPO CATEGORIA É OBRIGATORIO";
+
+        }
     }
 
     switch ($_POST["acao"]) {
