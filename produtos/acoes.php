@@ -37,12 +37,21 @@
             $erros[] = "CAMPO QUANTIDADE DEVE SER UM NUMERO";
             
         }
+
         //VALIDAÇÃO DE COR
         if ($_POST["cor"] == "" || !isset($_POST["cor"])) {
 
             $erros[] = "O CAMPO COR É OBRIGATORIO";
 
         }
+
+        //VALIDAÇÃO DE TAMANHO
+        if ($_POST["tamanho"] == "" || !isset($_POST["tamanho"])) {
+
+            $erros[] = "O CAMPO TAMANHO É OBRIGATORIO";
+
+        }
+
         //VALIDAÇÃO DE VALOR
         if ($_POST["valor"] == "" || !isset($_POST["valor"])) {
 
@@ -53,6 +62,7 @@
             $erros[] = "CAMPO VALOR DEVE SER UM NUMERO";
             
         }
+
         //VALIDAÇÃO DE DESCONTO
         if ($_POST["desconto"] == "" || !isset($_POST["desconto"])) {
 
