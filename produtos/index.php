@@ -85,7 +85,7 @@ $resultado = mysqli_query($conexao, $sql);
 
                             <span class="preco">
                                 R$ <?php echo number_format($valorComDesconto, 2, ',', '.');?>
-                                <em><?php echo $desconto?>% off</em>
+                                <em><?php echo $desconto; ?>% off</em>
                             </span>
 
                             <span class="parcelamento">ou em

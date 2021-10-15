@@ -10,7 +10,7 @@
         $erros = [];
 
         //VALIDAÇÃO DE DESCRIÇÃO
-        if ($_POST["decricao"] == "" || !isset($_POST["descricao"])) {
+        if ($_POST["descricao"] == "" || !isset($_POST["descricao"])) {
 
             $erros[] = "O CAMPO DESCRIÇÃO É OBRIGATORIO";
 
@@ -113,7 +113,19 @@
     switch ($_POST["acao"]) {
 
         case 'inserir':
-            
+
+            $erros = validarCampos();
+
+            if (count($erros) > 0) {
+                
+                $_SESSION["erros"] = $erros;
+
+                header("location: novo/index.php");
+
+                exit;
+
+            }
+
             /* TRATAMENTO DA IMAGEM PARA UPLOAD: */
 
             //RECUPERA O NOME DO ARQUIVO
