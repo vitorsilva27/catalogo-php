@@ -1,6 +1,32 @@
 <?php
 
+    session_start();
+
     require("../database/conexao.php");
+
+    function validarCampos(){
+        
+        //ARRAY DAS MENSAGENS DE ERROS    
+        $erros = [];
+
+        //VALIDAÇÃO DE DESCRIÇÃO
+        if ($_POST["decricao"] == "" || !isset($_POST["descricao"])) {
+            $erros[] = "O CAMPO É OBRIGATORIO";
+        }
+
+        //VALIDAÇÃO DE PESO
+
+        //VALIDAÇÃO DE QUANTIDADE
+        
+        //VALIDAÇÃO DE COR
+        
+        //VALIDAÇÃO DE VALOR
+
+        //VALIDAÇÃO DE DESCONTO
+
+        //VALIDAÇÃO DE CATEGORIA
+
+    }
 
     switch ($_POST["acao"]) {
 
