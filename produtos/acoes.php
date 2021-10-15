@@ -22,11 +22,21 @@
             $erros[] = "O CAMPO PESO É OBRIGATORIO";
 
         } elseif (!is_numeric(str_replace(",",".", $_POST["peso"]))) {
+
             $erros[] = "CAMPO PESO DEVE SER UM NUMERO";
+
         }
 
         //VALIDAÇÃO DE QUANTIDADE
-        
+        if ($_POST["quantidade"] == "" || !isset($_POST["quantidade"])) {
+
+            $erros[] = "O CAMPO QUANTIDADE É OBRIGATORIO";
+
+        } elseif (!is_numeric(str_replace(",",".", $_POST["quantidade"]))) {
+
+            $erros[] = "CAMPO QUANTIDADE DEVE SER UM NUMERO";
+            
+        }
         //VALIDAÇÃO DE COR
         
         //VALIDAÇÃO DE VALOR
