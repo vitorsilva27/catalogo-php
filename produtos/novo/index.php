@@ -51,11 +51,12 @@
 
           <ul>
 
-            <?php 
+            <?php
+            
               if (isset($_SESSION["erros"])) {
-
+                
                 foreach ($_SESSION["erros"] as $erro) {
-
+                  
                   echo "<li> $erro </li>";
 
                 }
